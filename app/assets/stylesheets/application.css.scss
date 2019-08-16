@@ -14,8 +14,8 @@
  *= require_self
  */
 
-@import 'bootstrap-sprockets';
-@import 'bootstrap';
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -37,7 +37,6 @@ h1, h2, h3 {
 // Navbar styles
 .navbar{
   border: none;
-  
 }
 
 .navbar-brand {
@@ -63,6 +62,16 @@ h1, h2, h3 {
 
 }
 
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+
+.navbar-default .navbar-toggle {
+  border: 2px solid white;
+  &:hover, &:focus { background-color: #00c6ff;
+  }
+}
 
 
 //Home page Styles
