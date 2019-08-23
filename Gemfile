@@ -35,11 +35,15 @@ group :development, :test do
   gem 'byebug', platform: :mri
 end
 
-#Use Font Awesome sass gem for adding icons
-gem 'font-awesome-sass', '4.6.2'
+  #Use Font Awesome sass gem for adding icons
+  gem 'font-awesome-sass', '4.6.2'
 
-#Use Hirb for better database display in console 
-gem 'hirb', '0.7.3'
+  #Use Hirb for better database display in console 
+  gem 'hirb', '0.7.3'
+
+  # Use Devise gem for User Authentication
+  gem 'devise', '4.2.0'
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
