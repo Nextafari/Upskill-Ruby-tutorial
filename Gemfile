@@ -44,6 +44,9 @@ end
   # Use Devise gem for User Authentication
   gem 'devise', '4.2.0'
   
+  # Use Paperclip for image upload
+  gem 'paperclip', '4.3.6'
+  
   # Use Stripe for processing payments
   gem 'stripe', '1.48.0'
   
