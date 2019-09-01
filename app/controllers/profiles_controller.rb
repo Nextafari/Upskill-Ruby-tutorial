@@ -14,7 +14,7 @@ class ProfilesController < ApplicationController
         @profile = @user.build_profile( profile_params )
         if @profile.save
             flash[:success] = "Your profile has been updated!"
-            redirect_to user_path( params[:user_id] )
+            redirect_to user_path(id: params[:user_id] )
         else
             render action: :new
         end
@@ -26,7 +26,21 @@ class ProfilesController < ApplicationController
         @profile = @user.profile
     end
     
-    
+    # This happens whenever a PUT/PATCH request is made to /users/:user_id/profile
+    def update
+        # Retrieve user from database
+        @user = User.find( params[:user_id] )
+        # Retrieve that user's profile
+        @profile = @user.profile
+        # Mass assign the edited peofile attributes and save (update)
+        if @profile.update_attributes(profile_params)
+            flash[:success] = "Profile updated!"
+            # redirect user to their profile page
+            redirect_to user_path(id: params[:user_id] )
+        else
+            render action: :edit
+        end
+    end
     # Whitelist the following parameters for security
     private
         def profile_params
