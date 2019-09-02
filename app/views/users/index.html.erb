@@ -1,0 +1,32 @@
+<div class = "container">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <ul class="list-unstyled">
+        <!-- Lists all of our users -->
+        <% @users.each do |user| %>
+          <% if user.profile %>
+            <li>
+              <div class="well <%= cycle('white-bg','') %>">
+                <div class="row">
+                  <div class="col-sm-4 text-center">
+                    <% if user.profile.avatar %>
+                      <%= link_to user do %>
+                        <%= image_tag user.profile.avatar.url, class: "user-index-avavtar" %>
+                      <% end %>
+                    <%end%>
+                  </div>
+                    <div>
+                      <%= link_to user do %>
+                        <h2><%= user.profile.first_name %> <%= user.profile.last_name %></h2>
+                      <% end %>
+                      <P><%= user.profile.job_title %></P>
+                    </div>
+                </div>
+              </div>
+            </li>
+          <% end  %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
